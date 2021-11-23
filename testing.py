@@ -5,22 +5,22 @@ import unittest
 from program import *
 
 class Test(unittest.TestCase):
-    def addition_test(self):
+    def test_addition(self):
         data = [5, 10]
         expected = 15
         self.assertEqual(addition(data[0], data[1]), expected)
 
-    def subtraction_test(self):
+    def test_subtraction(self):
         data = [5, 10]
         expected = -5
         self.assertEqual(subtraction(data[0], data[1]), expected)
 
-    def multiplication_test(self):
+    def test_multiplication(self):
         data = [5, 10]
-        expected = 15
+        expected = 50
         self.assertEqual(multiplication(data[0], data[1]), expected)
 
-    def division_test(self):
+    def test_division(self):
         data = [10, 2]
         expected = 5
         self.assertAlmostEqual(division(data[0], data[1]), expected)
