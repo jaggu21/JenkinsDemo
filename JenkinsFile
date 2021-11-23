@@ -14,14 +14,14 @@ pipeline {
         }
         stage('Build') {
             steps {
-                git branch: 'main', url: 'https://github.com/jaggu21/JenkinsDemo.git'
-                sh 'python3 prog.py'
+                git branch: 'main', url: 'https://github.com/jaggu21/JenkinsDemo.git'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
+                sh 'python3 program.py'
             }
         }
         stage('Test') {
             steps {
                 git branch: 'main', url: 'https://github.com/jaggu21/JenkinsDemo.git'
-                sh 'python3 test.py'
+                sh 'python3 testing.py'
             }
         }
     }
