@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                git branch: 'main', url: 'https://github.com/jaggu21/JenkinsDemo.git'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
+                git branch: 'main', url: 'https://github.com/jaggu21/JenkinsDemo.git'
                 sh 'python3 program.py'
             }
         }
@@ -27,16 +27,16 @@ pipeline {
     }
     
     
-    // post {
-    //     always {
-    //         echo 'Sending Email....j'
+     post {
+         always {
+             echo 'Sending Email.'
             
-    //         emailext body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More info at: ${env.BUILD_URL}",
-    //             recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']],
-    //             subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}",
-    //             to: 'tadrlh3@gmail.com'
+             emailext body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More info at: ${env.BUILD_URL}",
+                 recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']],
+                 subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}",
+                 to: 'jenkinsdemo2@gmail.com'
             
-    //         echo 'Email Sent.'
-    //     }
-    // }
+             echo 'Email Sent.'
+         }
+    }
 }
